@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'glass-background';
+  imageUrl? : string;
+  scrollPosition : number;
+  menuHeight = 500;
+
+  imageChanged( $event ) {
+    this.imageUrl = 'url( \'' + $event +  '\' )';
+  }
+
+  scrolled($event) {
+
+
+    this.scrollPosition = $event.target.scrollTop;
+    console.log( 'scrolled',  this.scrollPosition );
+  }
 }
