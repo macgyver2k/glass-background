@@ -11,19 +11,21 @@ export class AutoImageDirective implements OnInit {
   dataUrlChange = new EventEmitter<String>();
 
   constructor( private element: ElementRef) {
-    
+
   }
 
   async ngOnInit() {
-    const result = await domtoimage.toPng(this.element.nativeElement);
-    this.dataUrlChange.emit( result );
+    await this.updateImage();
   }
 
-   /*@HostListener('click', ['$event'])
-   async onClick(event) {
-     console.log('event:', event );
+   //@HostListener('click', ['$event'])
+   @HostListener('window:resize', ['$event'])
+   async onEvent( $event) {
+    await this.updateImage();
+  }
 
+  private async updateImage() {
     const result = await domtoimage.toPng(this.element.nativeElement);
-    this.dataUrlChange.emit( result );
-  }*/
+    this.dataUrlChange.emit(result);
+  }
 }

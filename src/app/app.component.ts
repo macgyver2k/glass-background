@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'glass-background';
   imageUrl? : string;
   scrollPosition : number;
-  menuHeight = 500;
+  menuHeight = 200;
 
   imageChanged( $event ) {
     this.imageUrl = 'url( \'' + $event +  '\' )';

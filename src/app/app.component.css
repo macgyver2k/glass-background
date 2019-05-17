@@ -1,0 +1,54 @@
+ .header {
+    height: auto;
+    max-height: 200px;
+
+ }
+
+
+ .message {
+  max-height: 200px;
+  transition: all 0.3s ease-in-out;
+ }
+ .message.compact {
+  max-height: 0;
+  overflow: hidden;
+}
+
+ #submenu {
+  max-height: 200px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 20px
+ }
+
+ .header.compact #submenu {
+    max-height: 0;
+    margin-bottom: 0;
+}
+
+.content {
+    padding-top: 200px;
+}
+
+*[appReveal] {
+  background-image: url('./../assets/sphere.png');
+  background-size: 512px;
+  background-repeat: no-repeat;
+  background-position: -256px;
+  filter: blur(8px);
+  opacity: 0;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.nsc-button {
+  color: #fff;
+  position: relative;
+  padding: 10px;
+  background-color: #1e498a00;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nsc-border {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 2px solid #ccccc88a; opacity: 0.0;
+
+}

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DemoViewComponent } from './demo-view/demo-view.component';
 import { AutoImageDirective } from './auto-image.directive';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RevealDirective } from './reveal.directive';
 
 @NgModule({
    declarations: [
       AppComponent,
       DemoViewComponent,
-      AutoImageDirective
+      AutoImageDirective,
+      RevealDirective
    ],
    imports: [
       BrowserModule,

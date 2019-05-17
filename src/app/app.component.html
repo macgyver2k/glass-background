@@ -1,409 +1,245 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: auto" (scroll)="scrolled($event)">
-  <div appAutoImage (dataUrlChange)="imageChanged( $event )" style="background-color:#fff">
+<div #header style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: auto"
+  (scroll)="scrolled($event)">
+  <div appAutoImage (dataUrlChange)="imageChanged( $event )" style="background-color:rgb(63, 63, 63)">
     <router-outlet></router-outlet>
 
-    <div style="position: relative; " [ngStyle]="{'margin-top': menuHeight + 'px' }">
+    <div style="position: relative; " class="content" [ngClass]="{ 'compact': scrollPosition > 50 }">
+
 
       <div class="container">
-        <form class="form-horizontal" action="/action_page.php">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-          </div>
-        </form>
-        <p>The form below contains two dropdown menus (select lists):</p>
-        <form>
-          <div class="form-group">
-            <label for="sel1">Select list (select one):</label>
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            <br>
-            <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
-            <select multiple class="form-control" id="sel2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </form>
-        <div class="media">
-          <div class="media-left media-top">
+        <div class="nsc-button row" style="background-color: #dae71c9f; margin-bottom: 20px">
 
+          <div class="nsc-border" #border12></div>
+          <div class="message col-8 col-sm-12 col-md-12 col-lg-8" [ngClass]="{ 'compact': scrollPosition > 400 }">
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
           </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #ffffff52;">
+              Accept
+              <div appReveal [revealContext]="header" [revealBorder]="border10"></div>
+              <div class="nsc-border" #border10></div>
+            </div>
+          </div>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #1b1b1b41;">
+              Decline
+              <div appReveal [revealContext]="header" [revealBorder]="border11"></div>
+              <div class="nsc-border" #border11></div>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
       </div>
       <div class="container">
-        <form class="form-horizontal" action="/action_page.php">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-          </div>
-        </form>
-        <p>The form below contains two dropdown menus (select lists):</p>
-        <form>
-          <div class="form-group">
-            <label for="sel1">Select list (select one):</label>
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            <br>
-            <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
-            <select multiple class="form-control" id="sel2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </form>
-        <div class="media">
-          <div class="media-left media-top">
+        <div class="nsc-button row" style="background-color: #dae71c9f; margin-bottom: 20px">
 
+          <div class="nsc-border" #border13></div>
+          <div class="col-8 col-sm-12 col-md-12 col-lg-8">
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
           </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #ffffff52;">
+              Accept
+              <div appReveal [revealContext]="header" [revealBorder]="border10"></div>
+              <div class="nsc-border" #border10></div>
+            </div>
+          </div>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #1b1b1b41;">
+              Decline
+              <div appReveal [revealContext]="header" [revealBorder]="border11"></div>
+              <div class="nsc-border" #border11></div>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
       </div>
       <div class="container">
-        <form class="form-horizontal" action="/action_page.php">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-          </div>
-        </form>
-        <p>The form below contains two dropdown menus (select lists):</p>
-        <form>
-          <div class="form-group">
-            <label for="sel1">Select list (select one):</label>
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            <br>
-            <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
-            <select multiple class="form-control" id="sel2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </form>
-        <div class="media">
-          <div class="media-left media-top">
+        <div class="nsc-button row" style="background-color: #dae71c9f; margin-bottom: 20px">
 
+          <div class="nsc-border" #border13></div>
+          <div class="col-8 col-sm-12 col-md-12 col-lg-8">
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
           </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #ffffff52;">
+              Accept
+              <div appReveal [revealContext]="header" [revealBorder]="border10"></div>
+              <div class="nsc-border" #border10></div>
+            </div>
+          </div>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #1b1b1b41;">
+              Decline
+              <div appReveal [revealContext]="header" [revealBorder]="border11"></div>
+              <div class="nsc-border" #border11></div>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
       </div>
       <div class="container">
-        <form class="form-horizontal" action="/action_page.php">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-          </div>
-        </form>
-        <p>The form below contains two dropdown menus (select lists):</p>
-        <form>
-          <div class="form-group">
-            <label for="sel1">Select list (select one):</label>
-            <select class="form-control" id="sel1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            <br>
-            <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
-            <select multiple class="form-control" id="sel2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </form>
-        <div class="media">
-          <div class="media-left media-top">
+        <div class="nsc-button row" style="background-color: #dae71c9f; margin-bottom: 20px">
 
+          <div class="nsc-border" #border13></div>
+          <div class="col-8 col-sm-12 col-md-12 col-lg-8">
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
           </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #ffffff52;">
+              Accept
+              <div appReveal [revealContext]="header" [revealBorder]="border10"></div>
+              <div class="nsc-border" #border10></div>
+            </div>
+          </div>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #1b1b1b41;">
+              Decline
+              <div appReveal [revealContext]="header" [revealBorder]="border11"></div>
+              <div class="nsc-border" #border11></div>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
-        <div class="media">
-          <div class="media-left media-top">
-
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Media Top</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-        <hr>
       </div>
     </div>
   </div>
-  <div style="position: fixed; top: 0; left: 0; right: 0;box-shadow: 0 0 8px #b085df;" [ngStyle]="{'height': menuHeight + 'px' }">
+  <div class="header"
+    style="position: fixed; top: 0px; left: 0; right: 0;box-shadow: 0 0 8px #443356; background-color: #fff; overflow: hidden;"
+    [ngClass]="{ 'compact': scrollPosition > 50 }">
 
     <div
-      style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;  filter:blur(8px); background-repeat: no-repeat"
-      [ngStyle]="{'background-image': imageUrl, 'background-position': '0 ' + (-scrollPosition) + 'px' }">
+      style="position: absolute; top: -16px; left: 0; right: 0; bottom: -16px;  filter:blur(16px); background-repeat: no-repeat;"
+      [ngStyle]="{'background-image': imageUrl, 'background-position': '0 ' + (-(scrollPosition-16)) + 'px' }">
     </div>
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-bottom: 2px solid #7373733d; background-color: #7428c791">
+    <div
+      style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-bottom: 2px solid #7373733d; background-color: #7428c791;">
+    </div>
+    <div
+      style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('./../assets/253055.bmp'); opacity: 0.15; filter: blur(4px);">
     </div>
     <div style="position: relative">
       <div class="container-fluid" style="color: #191919; padding-top: 24px; text-shadow: 0 0 20px #7d7d7d;">
-        <div class="row">
-        <div class="col-2">
+        <div class="row" style="margin-bottom: 20px">
+          <div class="message col-8 col-sm-12 col-md-12 col-lg-8" [ngClass]="{ 'compact': scrollPosition > 200 }">
+            <p style="color: #fff">A navigation bar is a navigation header that is placed at the top of the page.</p>
+          </div>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #29b11f41;">
+              Accept
+              <div appReveal [revealContext]="header" [revealBorder]="border"></div>
+              <div class="nsc-border" #border></div>
+            </div>
+          </div>
+          <div class="col-2 col-sm-4 col-md-6 col-lg-2">
+            <div class="nsc-button" style="background-color: #da1a4a41;">
+              Decline
+              <div appReveal [revealContext]="header" [revealBorder]="border2"></div>
+              <div class="nsc-border" #border2></div>
+            </div>
+          </div>
         </div>
-        <div class="col-8 ">
-          <h3>Basic Navbar Example</h3>
-  <p style="color: #fff">A navigation bar is a navigation header that is placed at the top of the page.</p>
+        <div class="row" id="submenu">
+          <div class="col-8 col-sm-2 col-md-2 col-lg-2">
+            <div class="nsc-button" style="background-color: #dabd1a41;">
+              X
+              <div appReveal [revealContext]="header" [revealBorder]="border4"></div>
+              <div class="nsc-border" #border4></div>
+            </div>
+          </div>
+          <div class="col-8 col-sm-10 col-md-10 col-lg-10">
+            <div class="nsc-button" style="background-color: #f04dd5c2;">
+              A navigation bar is a navigation header that is placed at the top of the page.
+              <div appReveal [revealContext]="header" [revealBorder]="border3"></div>
+              <div class="nsc-border" #border3></div>
+            </div>
+          </div>
         </div>
-        <div class="col-2">
-        </div>
-      </div>
       </div>
     </div>
   </div>
